@@ -12,7 +12,7 @@
 <meta name="author" content="rey.julien82@gmail.com" />
 
 
-<title>R-Studio - Notions de Base</title>
+<title>Language R - Notions de Base</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1509,7 +1509,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">R-Studio - Notions de Base</h1>
+<h1 class="title toc-ignore">Language R - Notions de Base</h1>
 <h4 class="author"><a href="mailto:rey.julien82@gmail.com" class="email">rey.julien82@gmail.com</a></h4>
 <h4 class="date">19/01/2022</h4>
 
@@ -1517,6 +1517,8 @@ div.tocify {
 
 
 <div style="page-break-after: always;"></div>
+<p>L’objet de ce document est de présenter les objets et manipulations
+de base du langage R.</p>
 <div id="chapitre-1---type-de-données" class="section level1">
 <h1>Chapitre 1 - Type de données</h1>
 <div id="vectors" class="section level2">
@@ -1524,7 +1526,7 @@ div.tocify {
 <p>Un vector est <strong>une liste de valeur avant le même type
 déterminé</strong>. Pour créer un vecteur on va utiliser la fonction
 <code>c()</code>. Les exemples suivants montrent comment créer un
-vecteur selon différents types.</p>
+vecteur de différents types.</p>
 <ul>
 <li>Vector de type <code>integer</code> :</li>
 </ul>
@@ -1584,7 +1586,7 @@ simplement la fonction <code>c()</code> comme pour la création.</p>
 </div>
 <div id="fonctions-sur-les-vectors" class="section level3">
 <h3>Fonctions sur les vectors</h3>
-<p>Il existe des fonctions qui prennent un argument un vector pour
+<p>Il existe des fonctions qui prennent en argument un vector pour
 retourner un résultat unique (et non un vector). Ces fonctions vont donc
 s’appliquer sur tout le vecteur, on retrouve des fonctions statistiques
 comme la somme, la moyenne, etc…</p>
@@ -1735,7 +1737,7 @@ level.</p>
 nominal.</strong> Dans le cas d’un factor ordinal, l’ordre des
 composants est important. On passe à la fonction l’argument
 <code>order = TRUE</code> pour indiquer que le factor est ordinal. Dans
-l’exemple ci-dessous, pn peut voir la hierarchie de level appliquer sur
+l’exemple ci-dessous, on peut voir la hierarchie de level appliquée sur
 l’objet <code>f_notation</code>:</p>
 <pre class="r"><code>v_notation &lt;- c(&quot;Bien&quot;,&quot;Mauvais&quot;,&quot;Bien&quot;,&quot;Bien&quot;,&quot;Parfait&quot;,&quot;Passable&quot;,&quot;Mauvais&quot;)
 f_notation &lt;- factor(v_notation, order = TRUE)
@@ -1764,7 +1766,7 @@ correspond à <em>Bien</em> avec le second qui correspond à
 <p>Un <strong>dataframe</strong> est une structure de données qui peut
 être vue comme une matrice qui accepte des types différents. Les lignes
 correspondent aux observations et les colonnes aux variables. Pour
-afficher les premiers observations d’un dataframe on va utiliser la
+afficher les premières observations d’un dataframe on va utiliser la
 fonction <code>head(df)</code> et <code>tail(df)</code> pour voir les
 dernières. Pour connaitre la structure d’un dataframe, on utilise la
 fonction <code>str(df)</code>. On peut ainsi connaître le nombre
@@ -1918,13 +1920,17 @@ ma_liste2</code></pre>
 <h1>Chapitre 2 - Base de la syntaxe</h1>
 <div id="control-flow" class="section level2">
 <h2>Control flow</h2>
-<p>Détail des opérateurs : - <code>==</code> : Permet de tester
-l’égalité - <code>&amp;</code> : <strong>AND</strong> S’applique sur
-chaque élément du vector - <code>|</code> : <strong>OR</strong>
-S’applique sur chaque élément du vector - <code>&amp;&amp;</code> :
-<strong>AND</strong> S’applique sur le premier élément du vector -
-<code>||</code> : <strong>OR</strong> S’applique sur le premier élément
-du vector</p>
+<ul>
+<li>L’opérateur <code>==</code> : Permet de tester l’égalité</li>
+<li>L’opérateur <code>&amp;</code> : <strong>AND</strong> S’applique sur
+chaque élément du vector</li>
+<li>L’opérateur <code>|</code> : <strong>OR</strong> S’applique sur
+chaque élément du vector</li>
+<li>L’opérateur <code>&amp;&amp;</code> : <strong>AND</strong>
+S’applique sur le premier élément du vector</li>
+<li>L’opérateur <code>||</code> : <strong>OR</strong> S’applique sur le
+premier élément du vector</li>
+</ul>
 <div id="bloc-if" class="section level3">
 <h3>Bloc IF</h3>
 <p>Exemple de syntaxe d’un bloc conditionnel <strong>IF</strong> :</p>
@@ -1948,9 +1954,9 @@ while(i &lt; 5){
   i &lt;- i + 1
 }</code></pre>
 <p>L’instruction <code>break</code> à l’intérieur d’une boucle permet de
-sortir complétement de la boucle. L’instruction <code>next</code> à
-l’intérieur d’une boucle permet de passer directement à la prochaine
-itération de la boucle.</p>
+sortir complétement de la boucle.</p>
+<p>L’instruction <code>next</code> à l’intérieur d’une boucle permet de
+passer directement à la prochaine itération de la boucle.</p>
 </div>
 <div id="boucle-for" class="section level3">
 <h3>Boucle FOR</h3>
@@ -1978,10 +1984,11 @@ sequence de nombres :</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="functions" class="section level2">
-<h2>Functions</h2>
-<p>Pour consulter l’aide d’une fonctionm il exsite deux syntaxe possible
-:<code>?ma_fonction</code> ou <code>help(ma_fonction)</code>.</p>
+<div id="fonctions" class="section level2">
+<h2>Fonctions</h2>
+<p>Pour consulter l’aide d’une fonction il exsite deux syntaxes
+possibles :<code>?ma_fonction</code> ou
+<code>help(ma_fonction)</code>.</p>
 <p>La fonction <code>args(ma_fonction)</code> permettra de connaitre la
 signature d’une fonction.</p>
 <pre class="r"><code>args(sum)</code></pre>
@@ -2011,8 +2018,13 @@ cours grâce à la commande <code>search()</code></p>
 ##  [4] &quot;package:stats&quot;     &quot;package:graphics&quot;  &quot;package:grDevices&quot;
 ##  [7] &quot;package:utils&quot;     &quot;package:datasets&quot;  &quot;package:methods&quot;  
 ## [10] &quot;Autoloads&quot;         &quot;package:base&quot;</code></pre>
-<div id="function-lapply" class="section level3">
-<h3>Function LAPPLY</h3>
+<div id="fonctions-de-type-apply" class="section level3">
+<h3>Fonctions de type APPLY</h3>
+<p>Ces fonctions permettent <strong>d’appliquer une fonction (existante
+ou anonyme) sur une liste</strong> d’élément. C’est une très bon
+raccourci permettant d’éviter les boucles FOR notamment</p>
+<div id="fonction-lapply" class="section level4">
+<h4>Fonction LAPPLY</h4>
 <p>La fonction <code>lapply(list, fun, [args])</code> permet d’appliquer
 une fonction <code>fun</code> sur une liste <code>list</code> et
 retournera toujours un élément de type <strong>liste</strong>. On peut,
@@ -2040,12 +2052,12 @@ convertir en vector.</p>
 <p>On peut utiliser une <strong>fonction anonyme</strong> comme
 argument. Une fonction anonyme est un fonction définie à la volée dans
 le code sans être nommée, avec la syntaxe suivante :
-<code>function(x) {x + 2}</code>.</p>
+<code>Fonction(x) {x + 2}</code>.</p>
 <pre class="r"><code>unlist(lapply(l1, function(x) {x^5}))</code></pre>
 <pre><code>## [1]   1024   3125 100000 759375</code></pre>
 </div>
-<div id="function-sapply" class="section level3">
-<h3>Function SAPPLY</h3>
+<div id="fonction-sapply" class="section level4">
+<h4>Fonction SAPPLY</h4>
 <p>SAPPLY signifie <strong>Simplify APPLY</strong>. Elle marche de la
 même manière que LAPPLY mais va chercher à <strong>simplifier le
 résultat sous forme de vector</strong> s’il y a une valeur, ou
@@ -2056,8 +2068,8 @@ LAPPLY.</p>
 <pre class="r"><code>sapply(l1, log, base = 10)</code></pre>
 <pre><code>## [1] 0.602060 0.698970 1.000000 1.176091</code></pre>
 </div>
-<div id="function-vapply" class="section level3">
-<h3>Function VAPPLY</h3>
+<div id="fonction-vapply" class="section level4">
+<h4>Fonction VAPPLY</h4>
 <p>VAPPLY fonctionne comme LAPPLY mais il faut en plus expliciter le
 type de sortie. <strong>Si le résultat de la fonction ne correspond pas
 au résultat attendu, une erreur sera alors levée.</strong></p>
@@ -2080,15 +2092,18 @@ vapply(l2,function(x){c(substr(x,1,1),substr(x,2,2))},character(2))</code></pre>
 mais nous avons un vector char de taille 3, une erreur est donc
 levée.</p>
 <pre class="r"><code>l2 &lt;- list(&quot;marc&quot;, &quot;julien&quot;, &quot;nadege&quot;)
-vapply(l2,function(x){c(substr(x,1,1),substr(x,2,2),substr(x,3,3))},character(2))</code></pre>
-<pre><code>## Error in vapply(l2, function(x) {: les valeurs doivent être d&#39;une longueur 2,
-##  mais FUN(X[[1]]) a une longueur 3</code></pre>
+vapply(l2,Fonction(x){c(substr(x,1,1),substr(x,2,2),substr(x,3,3))},character(2))</code></pre>
+<pre><code>## Error: &lt;text&gt;:2:22: &#39;{&#39; inattendu(e)
+## 1: l2 &lt;- list(&quot;marc&quot;, &quot;julien&quot;, &quot;nadege&quot;)
+## 2: vapply(l2,Fonction(x){
+##                         ^</code></pre>
 <p>Pour créér d’autres modèles de sorties dans d’autres types, on peut
 utiliser les fonctions associées aux types, à savoir
 <code>numeric(x)</code> ou <code>logical(x)</code></p>
 </div>
-<div id="useful-functions" class="section level3">
-<h3>Useful Functions</h3>
+</div>
+<div id="fonctions-utiles" class="section level3">
+<h3>Fonctions utiles</h3>
 <ul>
 <li><strong>is.y(x)</strong> et <strong>as.y(x)</strong> permettent
 respectivement de tester l’appartenance d’un objet <code>x</code> à un
@@ -2101,8 +2116,8 @@ is.numeric(my_int)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>as.character(my_int)</code></pre>
 <pre><code>## [1] &quot;1&quot;</code></pre>
-<div id="functions-sur-les-vectors" class="section level4">
-<h4>Functions sur les vectors</h4>
+<div id="fonctions-sur-les-vectors-1" class="section level4">
+<h4>Fonctions sur les vectors</h4>
 <ul>
 <li><p><strong>unlist(list)</strong> permet de convertir une liste
 <code>list</code> en un vector.</p></li>
@@ -2153,8 +2168,8 @@ renverra un vector de taille N-1 contenant la différence entre chaque
 diff(v1)</code></pre>
 <pre><code>## [1]  3 -3  9</code></pre>
 </div>
-<div id="functions-sur-les-chaines" class="section level4">
-<h4>Functions sur les chaines</h4>
+<div id="fonctions-sur-les-chaines" class="section level4">
+<h4>Fonctions sur les chaines</h4>
 <ul>
 <li><strong>grepl(pattern, string)</strong> retourne un booléen ou
 vector de booléen si le pattern trouve une correspondance.</li>
@@ -2182,8 +2197,8 @@ toutes les occurences.</li>
 sub(&quot;^[Mm]a*&quot;,&quot;--&quot;,v_names)</code></pre>
 <pre><code>## [1] &quot;--rc&quot;   &quot;Julien&quot; &quot;--rion&quot;</code></pre>
 </div>
-<div id="functions-sur-les-dates" class="section level4">
-<h4>Functions sur les dates</h4>
+<div id="fonctions-sur-les-dates" class="section level4">
+<h4>Fonctions sur les dates</h4>
 <ul>
 <li><strong>Sys.Date()</strong> renvoie la date système du jour</li>
 <li><strong>Sys.time()</strong> renvoie la date système du jour avec
@@ -2192,7 +2207,7 @@ l’heure</li>
 <pre class="r"><code>Sys.Date()</code></pre>
 <pre><code>## [1] &quot;2022-09-21&quot;</code></pre>
 <pre class="r"><code>Sys.time()</code></pre>
-<pre><code>## [1] &quot;2022-09-21 10:23:03 CEST&quot;</code></pre>
+<pre><code>## [1] &quot;2022-09-21 20:28:04 CEST&quot;</code></pre>
 <ul>
 <li><strong>as.Date(“yyyy-mm-dd”)</strong> permet de convertir une
 chaine de caractères en <code>date</code>. <code>yyyy-mm-dd</code> est
@@ -2258,6 +2273,9 @@ l’ensemble de ces caractères pour définir les partie de la date :
 </div>
 </div>
 </div>
+<div id="chapitre-3---importer-des-données" class="section level1">
+<h1>Chapitre 3 - Importer des données</h1>
+</div>
 
 
 
@@ -2308,7 +2326,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
